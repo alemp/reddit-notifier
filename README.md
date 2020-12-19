@@ -1,7 +1,5 @@
 # Reddit Notifier
 
-![reddit](https://styles.redditmedia.com/t5_6/styles/communityIcon_a8uzjit9bwr21.png?width=256&s=d28ea66f16da5a6c2ccae0d069cc4d42322d69a9)
-
 Mail notifications for Reddit users 
 
 ## Development server
