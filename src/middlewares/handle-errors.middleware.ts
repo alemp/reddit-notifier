@@ -27,12 +27,12 @@ export const handleErrors = (error: HandleError | Error, req: Request, res: Resp
   if (error instanceof HandleError) {
     return res.status(error.statusCode).json({
       status: 'error',
-      message: error.message
+      message: error.message,
     });
   }
 
   return res.status(500).json({
     status: 'error',
-    message: error.message
+    message: error.message,
   });
 };

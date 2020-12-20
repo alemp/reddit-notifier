@@ -24,13 +24,33 @@ export interface GenericController<T> {
   delete(id: string): Promise<boolean>;
 }
 
-/**
- * Implements abstracts and protected methods for database operations
- */
-export abstract class DatabaseController<T> implements GenericController<T> {
+/*
+* Implements file operations to database controller
+*/
+export class DatabaseFileController {
   // file path for database
   private readonly filePath = './src/data/data.json';
 
+  /**
+   * Opens the database
+   */
+  open(): Promise<Data> {
+    return jsonfile.readFile(this.filePath) as Promise<Data>;
+  }
+
+  /**
+   * Saves the whole database to the file
+   * @param db - database objects
+   */
+  save(db: Data): Promise<void> {
+    return jsonfile.writeFile(this.filePath, db);
+  }
+}
+
+/**
+ * Implements abstracts and protected methods for database operations
+ */
+export abstract class DatabaseController<T> extends DatabaseFileController implements GenericController<T> {
   /**
    * Get all data from database
    */
@@ -63,21 +83,4 @@ export abstract class DatabaseController<T> implements GenericController<T> {
    * @param id - object ID
    */
   abstract async delete(id: string): Promise<boolean>;
-
-  /**
-   * Opens the database
-   * @protected
-   */
-  protected open(): Promise<Data> {
-    return jsonfile.readFile(this.filePath) as Promise<Data>;
-  }
-
-  /**
-   * Saves the whole database to the file
-   * @param db - database objects
-   * @protected
-   */
-  protected save(db: Data): Promise<void> {
-    return jsonfile.writeFile(this.filePath, db);
-  }
 }

@@ -16,6 +16,24 @@ export class Routes {
       res.status(200).json(response);
     });
 
+    app.use('/reddit/send', async (req: Request, res: Response) => {
+      const controller = new RedditController();
+
+      const response = await controller.sendTopPostsByEmail();
+
+      res.status(200).json(response);
+    });
+
+    app.use('/reddit/:channel', async (req: Request, res: Response) => {
+      const controller = new RedditController();
+
+      const channel = req.params.channel;
+
+      const response = await controller.getTopPostsFromChannel(channel);
+
+      res.status(200).json(response);
+    });
+
     app.use('/', (req: Request, res: Response) => {
       res.status(200).json({
         message: `Reddit Notifier API version responded successfully`,
