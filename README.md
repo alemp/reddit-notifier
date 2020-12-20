@@ -1,6 +1,24 @@
 # Reddit Notifier
 
-Mail notifications for Reddit users 
+This project is an API to allow reddit users to receive mail notifications every day at 8am.
+
+* There is no UI. It works using REST API calls.
+* Uses a JSON file to persist data
+
+## Endpoints 
+### User
+* Add a new user: POST http://localhost:3000/users
+* Get a list of users: GET http://localhost:3000/users
+* Get a user: GET http://localhost:3000/users/:id
+* Update a user: PUT http://localhost:3000/users/:id
+* Delete a user: DELETE http://localhost:3000/users/:id
+
+## Channel
+* Add a new channel: POST http://localhost:3000/channels
+* Get a list of channels: GET http://localhost:3000/channels
+* Get a channel: GET http://localhost:3000/channels/:id
+* Update a channel: PUT http://localhost:3000/channels/:id
+* Delete a channel: DELETE http://localhost:3000/channels/:id
 
 ## Development server
 
@@ -28,7 +46,7 @@ Run `npm run build` to build the project.
 
 Run `npm run test` to execute the unit tests.
 
-# Dependencies
+## Dependencies
 
 You will need to have NodeJS 10+ installed globally in your machine.
 
