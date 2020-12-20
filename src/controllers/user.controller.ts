@@ -2,12 +2,9 @@ import { constants } from '../constants';
 import { HandleError } from '../middlewares/handle-errors.middleware';
 import { Channel, User } from '../models';
 import { getRandomIdFunction } from '../utils';
-import { ChannelController } from './channel.controller';
 import { DatabaseController } from './database.controller';
 
 export class UserController extends DatabaseController<User> {
-  channelController = new ChannelController();
-
   /**
    * Gets an object from the database
    * @param id - object ID

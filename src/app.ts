@@ -21,7 +21,6 @@ class App {
   constructor() {
     this.app = express();
     this.config();
-    this.routes.register(this.app);
   }
 
   /**
@@ -35,6 +34,8 @@ class App {
 
     // logger
     this.app.use(morgan('combined', { stream: new LoggerStream() }));
+
+    this.routes.register(this.app);
 
     // log errors
     this.app.use(handleErrors);

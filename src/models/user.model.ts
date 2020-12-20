@@ -17,6 +17,10 @@ export interface User {
    */
   email: string;
   /**
+   * newsletter
+   */
+  newsletter: boolean;
+  /**
    * user channels
    */
   channels?: Array<Channel>;
