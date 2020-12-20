@@ -1,6 +1,8 @@
 import bodyParser from 'body-parser';
 import express from 'express';
 import morgan from 'morgan';
+import cron from 'node-cron';
+import { RedditController } from './controllers/reddit.controller';
 import { handleErrors } from './middlewares/handle-errors.middleware';
 import { Routes } from './routes';
 import { LoggerStream } from './utils';
@@ -35,7 +37,18 @@ class App {
     // logger
     this.app.use(morgan('combined', { stream: new LoggerStream() }));
 
+    // routes
     this.routes.register(this.app);
+
+    // Cron job to get new posts from reddit
+    cron.schedule('* * 8 * * *', async () => {
+      try {
+        const redditController = new RedditController();
+        await redditController.sendTopPostsByEmail();
+      } catch (error) {
+        console.log(error);
+      }
+    });
 
     // log errors
     this.app.use(handleErrors);

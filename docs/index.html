@@ -64,6 +64,46 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
+				<a href="#reddit-notifier" id="reddit-notifier" style="color: inherit; text-decoration: none;">
+					<h1>Reddit Notifier</h1>
+				</a>
+				<p>Mail notifications for Reddit users </p>
+				<a href="#development-server" id="development-server" style="color: inherit; text-decoration: none;">
+					<h2>Development server</h2>
+				</a>
+				<ul>
+					<li>Run <code>npm install</code> to install the packages</li>
+					<li>Copy <code>.env.example</code> to <code>.env</code> file and fill the reddit info<ul>
+							<li>You must follow the first steps on <a href="https://github.com/reddit-archive/reddit/wiki/OAuth2-Quick-Start-Example">Reddit Quick Start Example</a>
+								and fill the info: <ul>
+									<li><code>REDDIT_CLIENT_ID</code> - app client ID created on reddit</li>
+									<li><code>REDDIT_CLIENT_SECRET</code> - app client secret</li>
+									<li><code>REDDIT_DEV_USER</code> - your dev user name</li>
+									<li><code>REDDIT_DEV_PWD</code> - your dev user password</li>
+								</ul>
+							</li>
+							<li>You must get an API key and create a template on Sendgrid to test<ul>
+									<li><code>SENDGRID_API_KEY</code> - API key for sendgrid API</li>
+									<li><code>SENDGRID_TEMPLATE_ID</code> - sendgrid template ID</li>
+									<li><code>SENDGRID_DEFAULT_FROM</code> - default email</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>Run <code>npm run test:dev</code> for a dev server. the API will be available at <code>http ://localhost:3000/</code>.</li>
+				</ul>
+				<a href="#build" id="build" style="color: inherit; text-decoration: none;">
+					<h2>Build</h2>
+				</a>
+				<p>Run <code>npm run build</code> to build the project. </p>
+				<a href="#running-unit-tests" id="running-unit-tests" style="color: inherit; text-decoration: none;">
+					<h2>Running unit tests</h2>
+				</a>
+				<p>Run <code>npm run test</code> to execute the unit tests.</p>
+				<a href="#dependencies" id="dependencies" style="color: inherit; text-decoration: none;">
+					<h1>Dependencies</h1>
+				</a>
+				<p>You will need to have NodeJS 10+ installed globally in your machine.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -76,13 +116,31 @@
 						<a href="modules/_src_app_.html">&quot;src/app&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/_src_constants_.html">&quot;src/constants&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_controllers_channel_controller_.html">&quot;src/controllers/channel.controller&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/_src_controllers_database_controller_.html">&quot;src/controllers/database.controller&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_src_controllers_index_.html">&quot;src/controllers/index&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/_src_controllers_mail_controller_.html">&quot;src/controllers/mail.controller&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_controllers_reddit_controller_.html">&quot;src/controllers/reddit.controller&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/_src_controllers_user_controller_.html">&quot;src/controllers/user.controller&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_middlewares_handle_errors_middleware_.html">&quot;src/middlewares/handle-<wbr>errors.middleware&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_middlewares_index_.html">&quot;src/middlewares/index&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_src_models_channel_model_.html">&quot;src/models/channel.model&quot;</a>
@@ -91,7 +149,19 @@
 						<a href="modules/_src_models_index_.html">&quot;src/models/index&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_mail_item_model_.html">&quot;src/models/mail-<wbr>item.model&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_reddit_channel_model_.html">&quot;src/models/reddit-<wbr>channel.model&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_models_reddit_post_model_.html">&quot;src/models/reddit-<wbr>post.model&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/_src_models_user_model_.html">&quot;src/models/user.model&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_routes_channel_router_.html">&quot;src/routes/channel.router&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_src_routes_index_.html">&quot;src/routes/index&quot;</a>
@@ -101,6 +171,9 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_src_server_.html">&quot;src/server&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_services_channel_service_.html">&quot;src/services/channel.service&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_src_services_generic_service_.html">&quot;src/services/generic.service&quot;</a>

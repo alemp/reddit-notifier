@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>User | reddit-notifier</title>
+	<title>MailItem | reddit-notifier</title>
 	<meta name="description" content="Documentation for reddit-notifier">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_src_models_user_model_.html">&quot;src/models/user.model&quot;</a>
+					<a href="../modules/_src_models_mail_item_model_.html">&quot;src/models/mail-item.model&quot;</a>
 				</li>
 				<li>
-					<a href="_src_models_user_model_.user.html">User</a>
+					<a href="_src_models_mail_item_model_.mailitem.html">MailItem</a>
 				</li>
 			</ul>
-			<h1>Interface User</h1>
+			<h1>Interface MailItem</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +72,8 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Implements user model</p>
+						<p>Implements Mail item
+						This mail item is used to send data via dynamic templates to sendgrid</p>
 					</div>
 				</div>
 			</section>
@@ -80,7 +81,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">User</span>
+						<span class="target">MailItem</span>
 					</li>
 				</ul>
 			</section>
@@ -91,11 +92,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_user_model_.user.html#channels" class="tsd-kind-icon">channels</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_user_model_.user.html#email" class="tsd-kind-icon">email</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_user_model_.user.html#id" class="tsd-kind-icon">id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_user_model_.user.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_user_model_.user.html#newsletter" class="tsd-kind-icon">newsletter</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_mail_item_model_.mailitem.html#channels" class="tsd-kind-icon">channels</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_mail_item_model_.mailitem.html#email" class="tsd-kind-icon">email</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_models_mail_item_model_.mailitem.html#user" class="tsd-kind-icon">user</a></li>
 							</ul>
 						</section>
 					</div>
@@ -105,16 +104,16 @@
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="channels" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> channels</h3>
-					<div class="tsd-signature tsd-kind-icon">channels<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_src_models_channel_model_.channel.html" class="tsd-signature-type">Channel</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<h3>channels</h3>
+					<div class="tsd-signature tsd-kind-icon">channels<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="_src_models_reddit_channel_model_.redditchannel.html" class="tsd-signature-type">RedditChannel</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alemp/reddit-notifier/blob/84637b7/src/models/user.model.ts#L26">src/models/user.model.ts:26</a></li>
+							<li>Defined in <a href="https://github.com/alemp/reddit-notifier/blob/84637b7/src/models/mail-item.model.ts#L19">src/models/mail-item.model.ts:19</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>user channels</p>
+							<p>List of channels (subreddit)</p>
 						</div>
 					</div>
 				</section>
@@ -124,57 +123,27 @@
 					<div class="tsd-signature tsd-kind-icon">email<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alemp/reddit-notifier/blob/84637b7/src/models/user.model.ts#L18">src/models/user.model.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/alemp/reddit-notifier/blob/84637b7/src/models/mail-item.model.ts#L15">src/models/mail-item.model.ts:15</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>user email</p>
+							<p>Email of the user</p>
 						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="id" class="tsd-anchor"></a>
-					<h3>id</h3>
-					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="user" class="tsd-anchor"></a>
+					<h3>user</h3>
+					<div class="tsd-signature tsd-kind-icon">user<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/alemp/reddit-notifier/blob/84637b7/src/models/user.model.ts#L10">src/models/user.model.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/alemp/reddit-notifier/blob/84637b7/src/models/mail-item.model.ts#L11">src/models/mail-item.model.ts:11</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>user ID</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="name" class="tsd-anchor"></a>
-					<h3>name</h3>
-					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/alemp/reddit-notifier/blob/84637b7/src/models/user.model.ts#L14">src/models/user.model.ts:14</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>user name</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="newsletter" class="tsd-anchor"></a>
-					<h3>newsletter</h3>
-					<div class="tsd-signature tsd-kind-icon">newsletter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/alemp/reddit-notifier/blob/84637b7/src/models/user.model.ts#L22">src/models/user.model.ts:22</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>newsletter</p>
+							<p>Name of the user</p>
 						</div>
 					</div>
 				</section>
@@ -187,7 +156,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/_src_models_user_model_.html">&quot;src/models/user.model&quot;</a>
+						<a href="../modules/_src_models_mail_item_model_.html">&quot;src/models/mail-<wbr>item.model&quot;</a>
 					</li>
 				</ul>
 			</nav>
@@ -196,22 +165,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_src_models_user_model_.user.html" class="tsd-kind-icon">User</a>
+						<a href="_src_models_mail_item_model_.mailitem.html" class="tsd-kind-icon">Mail<wbr>Item</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_src_models_user_model_.user.html#channels" class="tsd-kind-icon">channels</a>
+								<a href="_src_models_mail_item_model_.mailitem.html#channels" class="tsd-kind-icon">channels</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_src_models_user_model_.user.html#email" class="tsd-kind-icon">email</a>
+								<a href="_src_models_mail_item_model_.mailitem.html#email" class="tsd-kind-icon">email</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_src_models_user_model_.user.html#id" class="tsd-kind-icon">id</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_src_models_user_model_.user.html#name" class="tsd-kind-icon">name</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_src_models_user_model_.user.html#newsletter" class="tsd-kind-icon">newsletter</a>
+								<a href="_src_models_mail_item_model_.mailitem.html#user" class="tsd-kind-icon">user</a>
 							</li>
 						</ul>
 					</li>

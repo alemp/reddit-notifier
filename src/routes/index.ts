@@ -3,7 +3,14 @@ import { RedditController } from '../controllers/reddit.controller';
 import channelRouter from './channel.router';
 import userRouter from './user.router';
 
+/**
+ * Implement routes
+ */
 export class Routes {
+  /**
+   * register routes
+   * @param app - Express application
+   */
   register(app: Application): void {
     app.use('/channels', channelRouter);
     app.use('/users', userRouter);
@@ -12,14 +19,6 @@ export class Routes {
       const controller = new RedditController();
 
       const response = await controller.authenticate();
-
-      res.status(200).json(response);
-    });
-
-    app.use('/reddit/send', async (req: Request, res: Response) => {
-      const controller = new RedditController();
-
-      const response = await controller.sendTopPostsByEmail();
 
       res.status(200).json(response);
     });

@@ -14,12 +14,30 @@ dotenv.config();
  * Implements Reddit calls
  */
 export class RedditController {
+  /**
+   * Reddit client ID
+   */
   clientId: string;
+  /**
+   * Reddit client secret
+   */
   clientSecret: string;
+  /**
+   * Reddit username
+   */
   username: string;
+  /**
+   * Reddit password
+   */
   password: string;
+  /**
+   * Reddit OAuth token
+   */
   token: string;
 
+  /**
+   * Default user agent
+   */
   userAgent = 'com.reddit-notifier:v.1.0 (by /u/alemprj)';
 
   mailController = new MailController();
@@ -32,6 +50,9 @@ export class RedditController {
     this.password = process.env.REDDIT_DEV_PWD;
   }
 
+  /**
+   * Authenticate user on Reddit
+   */
   async authenticate() {
     const formData = new FormData();
     formData.append('grant_type', 'password');
@@ -73,6 +94,10 @@ export class RedditController {
     }
   }
 
+  /**
+   * Get last posts from subreddit
+   * @param channel - subreddit name
+   */
   async getTopPostsFromChannel(channel: string): Promise<Array<RedditPost>> {
     try {
       if (!this.token) {
@@ -101,6 +126,9 @@ export class RedditController {
     }
   }
 
+  /**
+   * Get new posts from all channels on the database
+   */
   async getTopPostFromChannels(): Promise<{ [key: string]: any }> {
     try {
       const db = await this.dbController.open();
@@ -125,6 +153,9 @@ export class RedditController {
     }
   }
 
+  /**
+   * Send new posts by email
+   */
   async sendTopPostsByEmail(): Promise<string> {
     try {
       const db = await this.dbController.open();
