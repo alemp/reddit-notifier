@@ -1,10 +1,13 @@
 import { constants } from '../constants';
 import { HandleError } from '../middlewares/handle-errors.middleware';
-import { User } from '../models';
+import { Channel, User } from '../models';
 import { getRandomIdFunction } from '../utils';
+import { ChannelController } from './channel.controller';
 import { DatabaseController } from './database.controller';
 
 export class UserController extends DatabaseController<User> {
+  channelController = new ChannelController();
+
   /**
    * Gets an object from the database
    * @param id - object ID
@@ -42,6 +45,10 @@ export class UserController extends DatabaseController<User> {
 
     object.id = getRandomIdFunction();
     db.users.push(object);
+
+    // add channel to channels
+    db.channels = this.updateChannels(object, db.channels);
+
     await this.save(db);
 
     return db.users;
@@ -63,6 +70,10 @@ export class UserController extends DatabaseController<User> {
     }
 
     db.users[index] = object;
+
+    // add channel to channels
+    db.channels = this.updateChannels(object, db.channels);
+
     await super.save(db);
 
     return object;
@@ -86,5 +97,22 @@ export class UserController extends DatabaseController<User> {
     await super.save(db);
 
     return true;
+  }
+
+  private updateChannels(user: User, dbChannels: Array<Channel>): Array<Channel> {
+    if (user.channels) {
+      user.channels.forEach(channel => {
+        const channelFound = dbChannels.find(item => item.name === channel.name);
+
+        if (!channelFound) {
+          dbChannels.push(channel);
+        }
+
+        // avoid duplications
+        dbChannels = Array.from(new Set(dbChannels));
+      });
+    }
+
+    return dbChannels;
   }
 }

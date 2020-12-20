@@ -20,8 +20,8 @@ class App {
 
   constructor() {
     this.app = express();
-    this.routes.register(this.app);
     this.config();
+    this.routes.register(this.app);
   }
 
   /**
@@ -31,7 +31,7 @@ class App {
   private config(): void {
     // body parser
     this.app.use(bodyParser.json());
-    this.app.use(bodyParser.urlencoded({ extended: false }));
+    this.app.use(bodyParser.urlencoded({ extended: true }));
 
     // logger
     this.app.use(morgan('combined', { stream: new LoggerStream() }));

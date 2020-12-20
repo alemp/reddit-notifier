@@ -1,11 +1,12 @@
 import jsonfile from 'jsonfile';
-import { User } from '../models';
+import { Channel, User } from '../models';
 
 /**
  * Interface for mocked data (writing in file)
  */
 interface Data {
   users: Array<User>;
+  channels: Array<Channel>;
 }
 
 /**
