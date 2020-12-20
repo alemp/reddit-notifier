@@ -16,6 +16,7 @@ Mail notifications for Reddit users
         * `SENDGRID_API_KEY` - API key for sendgrid API
         * `SENDGRID_TEMPLATE_ID` - sendgrid template ID
         * `SENDGRID_DEFAULT_FROM` - default email
+        * There is a file on root ([dynamic-template-sendgrid.html](https://github.com/alemp/reddit-notifier/blob/main/dynamic-template-sendgrid.html)) to import on sendgrid 
 * Run `npm run test:dev` for a dev server. the API will be available at `http
 ://localhost:3000/`.
 
