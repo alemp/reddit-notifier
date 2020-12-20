@@ -12,6 +12,10 @@ Mail notifications for Reddit users
         * `REDDIT_CLIENT_SECRET` - app client secret
         * `REDDIT_DEV_USER` - your dev user name
         * `REDDIT_DEV_PWD` - your dev user password
+    * You must get an API key and create a template on Sendgrid to test
+        * `SENDGRID_API_KEY` - API key for sendgrid API
+        * `SENDGRID_TEMPLATE_ID` - sendgrid template ID
+        * `SENDGRID_DEFAULT_FROM` - default email
 * Run `npm run test:dev` for a dev server. the API will be available at `http
 ://localhost:3000/`.
 
